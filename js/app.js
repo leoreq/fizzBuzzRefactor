@@ -4,27 +4,10 @@ $(document).ready(function() {
 	console.log("ready");
 	console.log(endPrint);
 	ask();
-	
-	function ask ()
-		{
-			endValue=+prompt("Please enter the last FIZZ BUZZ number");
-			//Chech the numbers are correctly inputt
-			if (endValue==NaN || endValue%1!=0) {
-		    	alert("please inter an integer");
-		    	endPrint=true;
-				}
-	
-			// Define the printer functions
 
-	
-			//initialize the object to be printed to
-			liPrint=new Printer("examplelist");
 
-			//this will end the printing loop if a number has not been introduced
 
-			fizzBuzzRefact(endValue);
-		}
-
+	//this is a printing function to append li arguments to a specific UL
 	function Printer(divID) {
 		  	
 		  	var lineCount = 1;
@@ -47,7 +30,8 @@ $(document).ready(function() {
 			    lineCount++;
 		  	}
 		}
-			
+	
+	//fizzBuzz logic		
 	function fizzBuzzRefact(max) {
 		console.log("Let the fizBuzz Games begin");
 		console.log(endPrint);
@@ -78,11 +62,30 @@ $(document).ready(function() {
 			}
 		}
 	
+	//function to ask for inputt, check validity and run print statements
+	function ask ()
+		{
+			endValue=+prompt("Please enter the last FIZZ BUZZ number");
+			//Chech the numbers are correctly inputt
+			if (endValue==NaN || endValue%1!=0) {
+		    	alert("please inter an integer");
+		    	endPrint=true;
+				}
+	
+			// Define the printer functions
 
+	
+			//initialize the object to be printed to
+			liPrint=new Printer("examplelist");
+
+			//this will end the printing loop if a number has not been introduced
+
+			fizzBuzzRefact(endValue);
+		}
 
 });
 
-
+//this will refresh the page case the button is pressed, in order to rerun fizzBuzz logic
 function myFunction() {
     location.reload();
 }
