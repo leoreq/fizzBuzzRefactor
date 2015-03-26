@@ -1,11 +1,13 @@
+//I am making the variable test a global variable, then when I peg the function to it,  that is loaded within the document becomes accesible outside it.
+var test;
+
 $(document).ready(function() {
 //actions that happen immediately after document is loaded
 	var endPrint=false;
 	console.log("ready");
 	console.log(endPrint);
 	ask();
-
-
+	test=ask;
 
 	//this is a printing function to append li arguments to a specific UL
 	function Printer(divID) {
@@ -65,6 +67,8 @@ $(document).ready(function() {
 	//function to ask for inputt, check validity and run print statements
 	function ask ()
 		{
+			$( "li" ).remove();
+			var endPrint=false;
 			endValue=+prompt("Please enter the last FIZZ BUZZ number");
 			//Chech the numbers are correctly inputt
 			if (endValue==NaN || endValue%1!=0) {
